@@ -1,0 +1,173 @@
+{
+    "name": "labo0708-vm-nsg",
+    "id": "/subscriptions/4e04237f-aa38-4958-aeb7-d7f366065eb8/resourceGroups/Laboratoire0708/providers/Microsoft.Network/networkSecurityGroups/labo0708-vm-nsg",
+    "etag": "W/\"7258772a-9409-4252-932f-459912051141\"",
+    "type": "Microsoft.Network/networkSecurityGroups",
+    "location": "westeurope",
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "2db5d065-57c8-4370-91ce-943b39f59cb0",
+        "securityRules": [
+            {
+                "name": "SSH",
+                "id": "/subscriptions/4e04237f-aa38-4958-aeb7-d7f366065eb8/resourceGroups/Laboratoire0708/providers/Microsoft.Network/networkSecurityGroups/labo0708-vm-nsg/securityRules/SSH",
+                "etag": "W/\"7258772a-9409-4252-932f-459912051141\"",
+                "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "protocol": "TCP",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "22",
+                    "sourceAddressPrefix": "193.190.77.0/24",
+                    "destinationAddressPrefix": "*",
+                    "access": "Allow",
+                    "priority": 300,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            }
+        ],
+        "defaultSecurityRules": [
+            {
+                "name": "AllowVnetInBound",
+                "id": "/subscriptions/4e04237f-aa38-4958-aeb7-d7f366065eb8/resourceGroups/Laboratoire0708/providers/Microsoft.Network/networkSecurityGroups/labo0708-vm-nsg/defaultSecurityRules/AllowVnetInBound",
+                "etag": "W/\"7258772a-9409-4252-932f-459912051141\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowAzureLoadBalancerInBound",
+                "id": "/subscriptions/4e04237f-aa38-4958-aeb7-d7f366065eb8/resourceGroups/Laboratoire0708/providers/Microsoft.Network/networkSecurityGroups/labo0708-vm-nsg/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                "etag": "W/\"7258772a-9409-4252-932f-459912051141\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "AzureLoadBalancer",
+                    "destinationAddressPrefix": "*",
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "DenyAllInBound",
+                "id": "/subscriptions/4e04237f-aa38-4958-aeb7-d7f366065eb8/resourceGroups/Laboratoire0708/providers/Microsoft.Network/networkSecurityGroups/labo0708-vm-nsg/defaultSecurityRules/DenyAllInBound",
+                "etag": "W/\"7258772a-9409-4252-932f-459912051141\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowVnetOutBound",
+                "id": "/subscriptions/4e04237f-aa38-4958-aeb7-d7f366065eb8/resourceGroups/Laboratoire0708/providers/Microsoft.Network/networkSecurityGroups/labo0708-vm-nsg/defaultSecurityRules/AllowVnetOutBound",
+                "etag": "W/\"7258772a-9409-4252-932f-459912051141\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowInternetOutBound",
+                "id": "/subscriptions/4e04237f-aa38-4958-aeb7-d7f366065eb8/resourceGroups/Laboratoire0708/providers/Microsoft.Network/networkSecurityGroups/labo0708-vm-nsg/defaultSecurityRules/AllowInternetOutBound",
+                "etag": "W/\"7258772a-9409-4252-932f-459912051141\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "Internet",
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "DenyAllOutBound",
+                "id": "/subscriptions/4e04237f-aa38-4958-aeb7-d7f366065eb8/resourceGroups/Laboratoire0708/providers/Microsoft.Network/networkSecurityGroups/labo0708-vm-nsg/defaultSecurityRules/DenyAllOutBound",
+                "etag": "W/\"7258772a-9409-4252-932f-459912051141\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            }
+        ],
+        "networkInterfaces": [
+            {
+                "id": "/subscriptions/4e04237f-aa38-4958-aeb7-d7f366065eb8/resourceGroups/Laboratoire0708/providers/Microsoft.Network/networkInterfaces/labo0708-vm585_z2"
+            }
+        ]
+    }
+}
